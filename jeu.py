@@ -1,11 +1,15 @@
-#Maintenant dans ce module on s'intéresse seulement à la probabilité d'avoir deux "pile"
-
 import random
+
+piece=random.randint(1,2)
+if piece == 1:
+    print("pile")
+if piece == 2:
+    print("face")
 
 
 def jeu(nbessai):
   gagne = 0 
-  nbessai = int(input("Veuillez saisir le nombre de fois où vous voulez jouer :"))
+  nbessai = 500
   graphe ={'debut':['P','F'],'P':['PP','F']}
   fin=['PP','F']
   for n in range (nbessai) :
@@ -13,9 +17,22 @@ def jeu(nbessai):
     while position not in fin:
       position = random.choice(graphe[position])
       if position==fin[0]:gagne+=1
-return(gagne/nbessai)
+    return(gagne/nbessai)
 
 if __name__ == "__main__":
     resultat = jeu(5000)
     print(resultat)
     pass
+
+ 
+import unittest
+import doctest
+
+
+if __name__ == "__main__":
+    import doctest
+    if True:
+        doctest.testmod(verbose=True, optionflags=512)
+    else:
+        doctest.testmod(verbose=True)
+
