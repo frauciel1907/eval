@@ -66,7 +66,18 @@ def tri_et_inverse(liste):
 maliste = [4,7,6]
 tri_et_inverse(maliste)
 
+class Mot:
+  
+  def __init__(self, mot):
+        self.mot = mot
 
+  def comptelettre(self, lettre):
+        return self.mot.count(lettre.lower())+ self.mot.count(lettre.upper())
+
+mot = Mot('Bonjour')
+mot.mot
+mot.comptelettre('o')
+mot.comptelettre('B') == mot.comptelettre('b') == 1
      
 """
     def aller_a_paris()
