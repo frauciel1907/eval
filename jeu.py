@@ -1,15 +1,8 @@
 import random
 
-piece=random.randint(1,2)
-if piece == 1:
-    print("pile")
-if piece == 2:
-    print("face")
-
-
 def jeu(nbessai):
   gagne = 0 
-  nbessai = 500
+  nbessai = 5000
   graphe ={'debut':['P','F'],'P':['PP','F']}
   fin=['PP','F']
   for n in range (nbessai) :
@@ -17,7 +10,8 @@ def jeu(nbessai):
     while position not in fin:
       position = random.choice(graphe[position])
       if position==fin[0]:gagne+=1
-    return(gagne/nbessai)
+      s=(gagne/nbessai)
+      return s
 
 if __name__ == "__main__":
     resultat = jeu(5000)
@@ -35,4 +29,3 @@ if __name__ == "__main__":
         doctest.testmod(verbose=True, optionflags=512)
     else:
         doctest.testmod(verbose=True)
-
